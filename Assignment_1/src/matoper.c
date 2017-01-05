@@ -31,7 +31,7 @@ double sum_mat(int m,int k,double **A){
 	return(sum);
 }
 
-void matmul_nat(int m,int n,int k,double **A,double **B,double **C){
+void matmult_nat(int m,int n,int k,double **A,double **B,double **C){
 	int i,j,l;
 	for (i = 0; i < m; i++)
 		for (j = 0; j < n; j++)
@@ -40,7 +40,7 @@ void matmul_nat(int m,int n,int k,double **A,double **B,double **C){
 				
 }
 
-void matmul_blk(int m,int n,int k,double **A,double **B,double **C,int blksize){
+void matmult_blk(int m,int n,int k,double **A,double **B,double **C,int blksize){
 	int i0,j0,l0,i,j,l;
 	for (i0=0; i0 < m; i0+=blksize)
 		for (j0=0; j0 < n; j0+=blksize)
