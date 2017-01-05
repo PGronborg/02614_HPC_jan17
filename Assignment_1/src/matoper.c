@@ -10,6 +10,27 @@ void matadd_nat(int m,int k,double **A,double **B,double **C){
 		}
 	}
 }
+
+void matsub_nat(int m,int k,double **A,double **B,double **C){
+	int i,j;
+	for (i = 0; i < m; i++){
+		for (j = 0; j < k; j++){
+			C[i][j] = A[i][j]-B[i][j];
+		}
+	}
+}
+
+double sum_mat(int m,int k,double **A){
+	int i,j;
+	double sum=0;
+	for (i = 0; i < m; i++){
+		for (j = 0; j < k; j++){
+			sum += A[i][j];
+		}
+	}
+	return(sum);
+}
+
 void matmul_nat(int m,int n,int k,double **A,double **B,double **C){
 	int i,j,l;
 	for (i = 0; i < m; i++)
@@ -20,16 +41,15 @@ void matmul_nat(int m,int n,int k,double **A,double **B,double **C){
 }
 
 void matmul_blk(int m,int n,int k,double **A,double **B,double **C,int blksize){
-	/*int i0,j0,l0,i,j,l,a;
+	int i0,j0,l0,i,j,l;
 	for (i0=0; i0 < m; i0+=blksize)
 		for (j0=0; j0 < n; j0+=blksize)
 			for (l0=0; l0 < k; l0+=blksize)
-				a = 1+1;
-				//for (i = i0; (i < i0+blksize) & (i < m); i++)
-					//for (j = j0; (j < j0+blksize) & (j < n); j++)
-						//for (l = l0; (l < (l0+blksize)) & (l< k); l++)
-						//	C[i,j] += A[i][l]*B[l][j];
-					*/
+				for (i = i0; (i < i0+blksize) & (i < m); i++)
+					for (j = j0; (j < j0+blksize) & (j < n); j++)
+						for (l = l0; (l < (l0+blksize)) & (l< k); l++)
+							C[i][j] += A[i][l]*B[l][j];
+							
 }
 
 void printMat(int m, int n, double **A){
