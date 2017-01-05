@@ -89,7 +89,7 @@ void matrixMultiplication(int runs, int m, int n, int k){
 		printMat(k,n,B);
 		//printf("\n\n");*/
 		printf("Before mat multiplication\n");
-		matmul_nat(m,n,k,A,B,C);
+		matmult_nat(m,n,k,A,B,C);
 		//printMat(m,n,C);
 		//printf("Freeing memory\n");
 		free_2d(A);
@@ -135,7 +135,7 @@ void matrixMultiplication_blk(int runs, int m, int n, int k,int blksize){
 		//printf("\n\n");*/
 		printf("Before mat multiplication\n");
 		init_mat(m,n,C,0.0);
-		matmul_blk(m,n,k,A,B,C,blksize);
+		matmult_blk(m,n,k,A,B,C,blksize);
 		//printMat(m,n,C);
 		printf("Freeing memory\n");
 		free_2d(A);
